@@ -1,0 +1,14 @@
+下载jar包导入 项目，并在web.xml中添加如下配置即可使用
+	<!-- 指定缓存清理周期，系统将在指定时间间隔后对缓存进行清理  若不设定则默认为10分钟-->
+	<context-param>
+		<param-name>period</param-name>
+		<param-value>60000</param-value>
+	</context-param>
+	<!-- 指定缓存中值存在的时间，值将过期被清理程序清理  若不设定该值默认为半小时-->
+	<context-param>
+		<param-name>expires</param-name>
+		<param-value>180000</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.yong.cache.WebCacheListener</listener-class>
+	</listener>
